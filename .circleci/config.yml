@@ -60,9 +60,7 @@ jobs:
       - run:
           name: Publish Docker image
           command: |
-            export DOCKER_PATH=$D_USER
-            export DOCKER_PASS=$D_PWD
-            docker login -u ${DOCKER_PATH} -p ${DOCKER_PASS}
+            docker login -u="${D_USER}" -p="${D_PWD}"
             docker push ${DOCKER_IMAGE}
   deploy_app:
     docker:
