@@ -11,7 +11,7 @@ orbs:
 executors:
   docker-publisher:
     environment:
-      DOCKER_IMAGE: veeravee93/P5:latest
+      DOCKER_IMAGE: veeravee93/p5:latest
     docker:
       - image: docker:stable
 jobs:
