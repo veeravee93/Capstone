@@ -11,7 +11,7 @@ orbs:
 executors:
   docker-publisher:
     environment:
-      DOCKER_IMAGE: veeravee93/capstone-${CIRCLE_WORKFLOW_ID:0:7}:latest
+      DOCKER_IMAGE: veeravee93/P5:latest
     docker:
       - image: docker:stable
 jobs:
@@ -53,7 +53,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build --tag=capstone-${CIRCLE_WORKFLOW_ID:0:7} .
+          command: docker build --tag ${DOCKER_IMAGE} .
       - run:
           name: List docker images
           command: docker image ls
@@ -63,7 +63,7 @@ jobs:
             export DOCKER_PATH=$D_USER
             export DOCKER_PASS=$D_PWD
             docker login -u ${DOCKER_PATH} -p ${DOCKER_PASS}
-            docker push veeravee93/capstone-${CIRCLE_WORKFLOW_ID:0:7}
+            docker push ${DOCKER_IMAGE}
   deploy_app:
     docker:
       - image: 'cimg/base:stable'
