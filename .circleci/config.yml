@@ -11,7 +11,7 @@ orbs:
 executors:
   docker-publisher:
     environment:
-      DOCKER_IMAGE: veeravee93/p5:latest
+      DOCKER_IMAGE: veeravee93/capstone-${CIRCLE_WORKFLOW_ID:0:7}
     docker:
       - image: docker:stable
 jobs:
@@ -72,12 +72,12 @@ jobs:
             pwd 
             ls -ltra
       - aws-eks/update-kubeconfig-with-authenticator:
-          cluster-name: P5clsuter
+          cluster-name: p5clsuter
           install-kubectl: true
       - kubernetes/create-or-update-resource:
           get-rollout-status: true
           resource-file-path: deployment.yml
-          resource-name: deployment/P5
+          resource-name: deployment/p5
           show-kubectl-command: true
 
 workflows:

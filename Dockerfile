@@ -1,10 +1,10 @@
 FROM python:3.7.3-stretch
 
 ## Step 1: Create a working directory
-WORKDIR /P5
+WORKDIR /p5
 
 ## Step 2: Copy source code to working directory
-COPY . flaskapp/app.py /P5/
+COPY . flaskapp/app.py /p5/
 
 ## Step 3:
 # Install packages from requirements.txt

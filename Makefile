@@ -1,7 +1,7 @@
 setup:
 	# Create python virtualenv & source it
 	# source ~/.proj5/bin/activate
-	python3 -m venv ~/.P5
+	python3 -m venv ~/.p5
 
 install:
 	# This should be run from inside a virtualenv

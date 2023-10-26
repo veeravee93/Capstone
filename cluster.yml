@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 Kind: ClusterConfig
 
 metadata:
-  name: P5clsuter
+  name: p5clsuter
   region: us-east-1
 
 nodeGroups:
