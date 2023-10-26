@@ -11,7 +11,7 @@ orbs:
 executors:
   docker-publisher:
     environment:
-      DOCKER_IMAGE: veeravee93/capstone-${CIRCLE_WORKFLOW_ID:0:7}
+      DOCKER_IMAGE: veeravee93/capstone
     docker:
       - image: docker:stable
 jobs:
