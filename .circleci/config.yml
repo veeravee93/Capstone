@@ -33,14 +33,14 @@ jobs:
             # Build image and add a descriptive tag
             docker build --tag=capstone-squirtle-${CIRCLE_WORKFLOW_ID:0:7} .
 
-            # Get list of docker image
+            # Get list of docker 
             docker image ls
       - run:
           name: login and push image to docker
           command: |
             # cd Docker
-            # export DOCKER_PATH=$DOCKER_PATH
-            # export DOCKER_PASS=$DOCKER_PASS
+            export DOCKER_PATH=$DOCKER_PATH
+            export DOCKER_PASS=$DOCKER_PASS
 
             docker login -u ${DOCKER_PATH} -p ${DOCKER_PASS}
 
